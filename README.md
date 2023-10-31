@@ -25,3 +25,14 @@
    - Realizamos cambios en **resultado.html**
 4. Optimización del punto 3
    - Los nombres de los inputs del formulario **form** tienen que ser iguales a los nombres de los atributos del Objeto **Usuario**
+5. Validaciones y Manejo de Errores
+   - **@NotEmpty**: No permite enviar datos vacíos de Usuario
+     - Le ponemos a todos los atributos de Usuario
+     - Adicional al atributo email le agregamos **@Email**
+   - **@Valid**: Con esta anotación le estamos diciendo que le estamos validando al Usuario
+   - **Manejo de Errores**
+     - **BindingResult**: Mapea todos los errores
+     - Enviamos todos los errores encontrados a form.html
+     - Validamos los errores en form.html
+     - Para evitar que se pierdan los datos al actualizar la página form.html usamos th:value="${usuario.username}"
+     - Adicional agregamos en el FormControl en el método form <code> Usuario usuario = new Usuario();<code>
