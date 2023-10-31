@@ -23,3 +23,5 @@
    - Creamos el package **model.domain**
    - Realizamos cierta modificación en el **FormController**
    - Realizamos cambios en **resultado.html**
+4. Optimización del punto 3
+   - Los nombres de los inputs del formulario **form** tienen que ser iguales a los nombres de los atributos del Objeto **Usuario**

@@ -16,12 +16,7 @@ public class FormController {
         return "form";
     }
     @PostMapping("/form")
-    public String procesar(Model model, @RequestParam String username, @RequestParam String password, @RequestParam String email){
-        Usuario usuario = new Usuario();
-        usuario.setUsername(username);
-        usuario.setPassword(password);
-        usuario.setEmail(email);
-
+    public String procesar(Usuario usuario, Model model){
         model.addAttribute("titulo", "Resultado");
         model.addAttribute("usuario", usuario);
         return "resultado";
