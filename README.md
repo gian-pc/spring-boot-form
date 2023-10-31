@@ -35,4 +35,10 @@
      - Enviamos todos los errores encontrados a form.html
      - Validamos los errores en form.html
      - Para evitar que se pierdan los datos al actualizar la página form.html usamos th:value="${usuario.username}"
-     - Adicional agregamos en el FormControl en el método form <code> Usuario usuario = new Usuario();<code>
+     - Adicional agregamos en el FormControl en el método form <code> Usuario usuario = new Usuario();</code>
+6. Optimizar los errores
+   - Hacer un código más pequeño usando etiquetas adicionales en Thymeleaf
+   - Para ello **Thymeleaf** mapea el form.html, los **inputs** deben de ser iguales a los nombres de los atributos de **Usuario**.
+   - Modificamos el **FormController**
+   - También modificamos el **form.html** añadiendo etiquetas
+

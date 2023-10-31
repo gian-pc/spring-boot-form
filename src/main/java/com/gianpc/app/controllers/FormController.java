@@ -8,9 +8,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Controller
 public class FormController {
 
@@ -24,12 +21,7 @@ public class FormController {
     @PostMapping("/form")
     public String procesar(@Valid Usuario usuario, BindingResult result, Model model){
         if(result.hasErrors()) {
-            Map<String, String> errores = new HashMap<>(); // Con Map almacenamos el tag y la descripción del error debido a que es bidimensional
-            result.getFieldErrors().forEach(error -> {// recorremos una lista de errores
-                errores.put(error.getField(), error.getDefaultMessage());
-            });
             model.addAttribute("titulo", "Formulario Usuario");
-            model.addAttribute("error", errores);
             return "form";
         }
         model.addAttribute("titulo", "Resultado");
