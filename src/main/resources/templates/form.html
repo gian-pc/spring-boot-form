@@ -39,9 +39,7 @@
         <div>
             <select id="pais" th:field="*{pais}">
                 <option value="">--- Seleccione ---</option>
-                <option value="Perú">Perú</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Bolivia">Bolivia</option>
+                <option th:each="pais: ${listPaises}" th:text="${pais}" th:value="${pais}"></option>
             </select>
         </div>
         <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais}"></div>

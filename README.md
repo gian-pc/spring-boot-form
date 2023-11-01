@@ -49,3 +49,7 @@
    - Manteniendo un valor en memoria **@SessionAttributes("usuario")**
    - Finalizando la session en memoria de id con **SessionStatus**
    - También agregamos un Select de forma Explicita
+9. Mejorando el SELECT
+   - Generamos una lista de forma general
+   - Para ello hacemos un método general @ModelAttribute
+   - Luego modificamos la vista form.html

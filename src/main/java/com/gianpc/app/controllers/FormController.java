@@ -6,9 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @SessionAttributes("usuario")
@@ -32,5 +36,16 @@ public class FormController {
         model.addAttribute("usuario", usuario);
         status.setComplete(); // luego de enviar al resultado se vacía
         return "resultado";
+    }
+
+    @ModelAttribute("listPaises")
+    public List<String> listPaises() {
+        List<String> paises = new ArrayList<>();
+        paises.add("Perú");
+        paises.add("Argentina");
+        paises.add("Bolivia");
+        paises.add("Brasil");
+        paises.add("Chile");
+        return paises;
     }
 }
