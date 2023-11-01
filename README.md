@@ -58,3 +58,5 @@
 11. Utilizando un Map
     - Hacemos una lista de Países, pero con Map en el FormController
     - Modificamos el form.html
+12. Desacoplando los mensajes
+    - Creamos messages.properties

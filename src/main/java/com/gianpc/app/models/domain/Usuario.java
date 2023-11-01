@@ -8,14 +8,14 @@ import jakarta.validation.constraints.Size;
 public class Usuario {
 
     private Integer id;
-    @NotBlank(message = "Debes ingresar el dato solicitado")
+    @NotBlank
     private String username;
-    @Size(min = 3,max = 6, message = "Debes de usar de 3 a 6 caracteres")
+    @Size(min = 3,max = 6)
     private String password;
-    @NotBlank(message = "Debes ingresar el dato solicitado")
-    @Email(message = "Debes ingresar un correo con formato correcto (@)")
+    @NotBlank
+    @Email
     private String email;
-    @NotEmpty(message = "Debe seleccionar un país")
+    @NotEmpty
     private String pais;
 
     public String getUsername() {
