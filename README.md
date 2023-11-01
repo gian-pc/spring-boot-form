@@ -41,4 +41,4 @@
    - Para ello **Thymeleaf** mapea el form.html, los **inputs** deben de ser iguales a los nombres de los atributos de **Usuario**.
    - Modificamos el **FormController**
    - También modificamos el **form.html** añadiendo etiquetas
-
+7. Optimizar los errores II

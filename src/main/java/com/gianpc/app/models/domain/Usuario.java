@@ -1,15 +1,17 @@
 package com.gianpc.app.models.domain;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 public class Usuario {
-    @NotEmpty
+    @NotBlank(message = "Debes ingresar el dato solicitado")
     private String username;
-    @NotEmpty
+    @Size(min = 3,max = 6, message = "Debes de usar de 3 a 6 caracteres")
     private String password;
-    @NotEmpty
-    @Email
+    @NotBlank(message = "Debes ingresar el dato solicitado")
+    @Email(message = "Debes ingresar un correo con formato correcto (@)")
     private String email;
 
     public String getUsername() {
