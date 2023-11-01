@@ -42,3 +42,10 @@
    - Modificamos el **FormController**
    - También modificamos el **form.html** añadiendo etiquetas
 7. Optimizar los errores II
+8. Pasar un Id
+   - Agregamos un atributo a la clase Usuario
+   - Agregamos un campo más en form.html
+   - En resultado le decimos que lea el campo id
+   - Manteniendo un valor en memoria **@SessionAttributes("usuario")**
+   - Finalizando la session en memoria de id con **SessionStatus**
+   - También agregamos un Select de forma Explicita

@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 public class Usuario {
+
+    private Integer id;
     @NotBlank(message = "Debes ingresar el dato solicitado")
     private String username;
     @Size(min = 3,max = 6, message = "Debes de usar de 3 a 6 caracteres")
@@ -13,6 +15,8 @@ public class Usuario {
     @NotBlank(message = "Debes ingresar el dato solicitado")
     @Email(message = "Debes ingresar un correo con formato correcto (@)")
     private String email;
+    @NotEmpty(message = "Debe seleccionar un país")
+    private String pais;
 
     public String getUsername() {
         return username;
@@ -36,5 +40,21 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 }
