@@ -53,3 +53,5 @@
    - Generamos una lista de forma general
    - Para ello hacemos un método general @ModelAttribute
    - Luego modificamos la vista form.html
+10. Optimizando el punto 9
+    - Agregamos un Arrays con la lista de países

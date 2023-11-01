@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -40,12 +41,6 @@ public class FormController {
 
     @ModelAttribute("listPaises")
     public List<String> listPaises() {
-        List<String> paises = new ArrayList<>();
-        paises.add("Perú");
-        paises.add("Argentina");
-        paises.add("Bolivia");
-        paises.add("Brasil");
-        paises.add("Chile");
-        return paises;
+        return Arrays.asList("Perú","Argentina","Bolivia","Brasil","Chile", "Colombia");
     }
 }
