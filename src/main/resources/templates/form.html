@@ -39,7 +39,7 @@
         <div>
             <select id="pais" th:field="*{pais}">
                 <option value="">--- Seleccione ---</option>
-                <option th:each="pais: ${listPaises}" th:text="${pais}" th:value="${pais}"></option>
+                <option th:each="pais: ${mapPaises.entrySet()}" th:value="${pais.key}" th:text="${pais.value}" ></option>
             </select>
         </div>
         <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais}"></div>

@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @SessionAttributes("usuario")
@@ -42,5 +40,14 @@ public class FormController {
     @ModelAttribute("listPaises")
     public List<String> listPaises() {
         return Arrays.asList("Perú","Argentina","Bolivia","Brasil","Chile", "Colombia");
+    }
+
+    @ModelAttribute("mapPaises")
+    public Map<String,String> mapPaises() {
+        Map<String,String> paises = new HashMap<>();
+        paises.put("PE", "Perú");
+        paises.put("CL", "Chile");
+        paises.put("CO", "Colombia");
+        return paises;
     }
 }
