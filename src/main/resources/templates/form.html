@@ -45,6 +45,13 @@
         <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais}"></div>
     </div>
     <div>
+        <label for="fechaNacimiento">Fecha Nacimiento:</label>
+        <div>
+            <input type="date" id="fechaNacimiento" th:field="*{fechaNacimiento}">
+        </div>
+        <div th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento}"></div>
+    </div>
+    <div>
         <input type="submit" value="Enviar">
     </div>
 </form>

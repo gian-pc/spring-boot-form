@@ -1,6 +1,9 @@
 package com.gianpc.app.models.domain;
 
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 public class Usuario {
 
@@ -14,6 +17,9 @@ public class Usuario {
     private String email;
     @NotNull
     private Pais pais;
+    @NotNull
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date fechaNacimiento;
 
     public String getUsername() {
         return username;
@@ -53,5 +59,13 @@ public class Usuario {
 
     public void setPais(Pais pais) {
         this.pais = pais;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 }

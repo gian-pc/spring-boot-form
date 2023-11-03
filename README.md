@@ -101,3 +101,13 @@
               - Se registra el editor, toma el código, envía ese código, busca un Pais en concreto y retorna un Pais y ese Pais completo le asigna al campo **pais**
               - De tal forma que en los resultados se pueda acceder a todos los atributos de pais y no solamente a uno de ellos
               - En resultado agregamos usuario.pais.nombre
+15. Date
+    - Agregamos un atributo **fechaNacimiento** de tipo Date
+    - Agregamos un nuevo campo en el form.html
+    - Agregamos en el resultado.html
+    - Le damos formato a fechaNacimiento con @DateTimeFormat(pattern = "yyyy-MM-dd")
+    - En form.html se recomienda usar type="date" el cual le agrega un formato
+    - En resultado también agregamos un formato
+    - Para evitar que se envíe un campo vacío se agrega @NotNull en fechaNacimiento
+    - Agregamos messages.properties
+    - @Past y @Future validá que las fechas sean del pasado o futuro
