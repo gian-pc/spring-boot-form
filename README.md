@@ -119,3 +119,5 @@
     - Agregamos un bucle para las listas de roles
     - En el form agregamos ids para que al hacer clic en las etiquetas de roles se seleccione la casilla del checkbox
     - Agregamos una lista en el Resultado
+17. Resultado
+    - ![img.png](src%2Fmain%2Fresources%2Fstatic%2Fimg.png)
