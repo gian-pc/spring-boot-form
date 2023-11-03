@@ -1,9 +1,6 @@
 package com.gianpc.app.models.domain;
 
-import jakarta.validation.constraints.NotEmpty;
-
 public class Pais {
-    @NotEmpty
     private String codigo;
     private String nombre;
 

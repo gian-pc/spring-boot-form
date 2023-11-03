@@ -1,15 +1,16 @@
 package com.gianpc.app.controllers;
 
+import com.gianpc.app.editors.PaisEditor;
 import com.gianpc.app.models.domain.Pais;
 import com.gianpc.app.models.domain.Usuario;
+import com.gianpc.app.services.IPais;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.*;
@@ -17,6 +18,17 @@ import java.util.*;
 @Controller
 @SessionAttributes("usuario")
 public class FormController {
+
+    @Autowired
+    private IPais iPais;
+
+    @Autowired
+    private PaisEditor paisEditor;
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.registerCustomEditor(Pais.class, "pais", paisEditor);
+    };
 
     @GetMapping("/form")
     public String form(Model model){
@@ -62,5 +74,9 @@ public class FormController {
                 new Pais("CO", "Colombia"),
                 new Pais("EC", "Ecuador")
         );
+    }
+    @ModelAttribute("objectPaisesV2")
+    public List<Pais> objectPaisesV2() {
+        return iPais.listarPaises();
     }
 }

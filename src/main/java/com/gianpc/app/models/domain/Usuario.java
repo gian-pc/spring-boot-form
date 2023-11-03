@@ -1,10 +1,6 @@
 package com.gianpc.app.models.domain;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Usuario {
 
@@ -16,7 +12,7 @@ public class Usuario {
     @NotBlank
     @Email
     private String email;
-    @Valid
+    @NotNull
     private Pais pais;
 
     public String getUsername() {

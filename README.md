@@ -67,4 +67,37 @@
     - @NotNull: Evalúa si se creo o no el objeto
     - En el controlador agregamos un método
     - Modificamos el form.html
-    - 
+14. Desacoplar
+    - Creamos el package services
+      - Creamos una interface Ipais
+        - Generamos 2 métodos
+      - Creamos 1 clase PaisService
+        - Implements Ipais
+        - Desarrollamos los 2 métodos implementados
+        - Generamos un constructor, de tal manera que al llamar a PaisService se construye los países 1 sola vez para luego ser retornado las veces que sea necesario
+        - Desarrollamos el método ObtenerPais
+    - Inyectamos la Interface IPais en el FormController @Autowired
+      - Para ello PaisService debe convertirse en un componente @Service
+      - Creamos un nuevo método que retorne todos los países
+    - Hacemos un cambio en form.html con el nuevo método "objectPaisesV2"
+    - Probamos y se genera un error de validación, debido a que ahora estamos validando un objeto completo, debemos hacer ciertos cambios
+    - Eliminamos la validación @NotEmpty en Pais
+    - Cambiamos el atributo pais @NotNull en Usuario
+    - Adicional hacemos un cambio a NotNull.usuario.pais en messages.properties
+    - Probamos y vuelve a generarse el error
+      - Está fallando la conversión de codigo que es un String hacia un Objeto de tipo País
+        - Solución: Lo que haremos es tomar el código que es un String mapearlo con el método **obtenerPais** que reciba el codigo por parámetro devuelva un país y la conversión Pais con Pais si se la respete
+          - Creamos un package **editors**
+          - Creamos 1 clase **PaisEditor**
+          - Convertimos en un @Component
+          - Extendemos de PropertyEditorSupport(Convertir un texto en algo de otro tipo)
+          - Inyectamos la interface IPais
+          - En el **FormController** inyectamos PaisEditor
+          - Agregamos un nuevo método **@InitBinder**
+            - Se inicia en primer lugar y se registra un editor(Lo que contenga paisEditor(Un método que me permite cambiar ese String código a un País))
+            - Adicionalmente tenemos que decirle a quien va a afectar **pais** de Usuario
+            - También tenemos que decirle de qué tipo es **Pais.class**
+            - Funciona así: Al momento de hacer click el boton **enviar** se ejecuta el método **initBinder**
+              - Se registra el editor, toma el código, envía ese código, busca un Pais en concreto y retorna un Pais y ese Pais completo le asigna al campo **pais**
+              - De tal forma que en los resultados se pueda acceder a todos los atributos de pais y no solamente a uno de ellos
+              - En resultado agregamos usuario.pais.nombre
