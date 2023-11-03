@@ -111,3 +111,11 @@
     - Para evitar que se envíe un campo vacío se agrega @NotNull en fechaNacimiento
     - Agregamos messages.properties
     - @Past y @Future validá que las fechas sean del pasado o futuro
+16. Roles
+    - Creamos un nuevo campo roles y agregamos la anotación @NotEmpty
+    - Agregamos los getters y setters
+    - En el FormController agregamos un nuevo método @ModelAttribute("listRoles")
+    - Agregamos un nuevo campo en el form
+    - Agregamos un bucle para las listas de roles
+    - En el form agregamos ids para que al hacer clic en las etiquetas de roles se seleccione la casilla del checkbox
+    - Agregamos una lista en el Resultado

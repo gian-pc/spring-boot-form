@@ -4,6 +4,7 @@ import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class Usuario {
 
@@ -20,6 +21,8 @@ public class Usuario {
     @NotNull
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date fechaNacimiento;
+    @NotEmpty
+    private List<String> roles;
 
     public String getUsername() {
         return username;
@@ -67,5 +70,13 @@ public class Usuario {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 }

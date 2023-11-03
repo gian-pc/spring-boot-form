@@ -79,4 +79,9 @@ public class FormController {
     public List<Pais> objectPaisesV2() {
         return iPais.listarPaises();
     }
+
+    @ModelAttribute("listRoles")
+    public List<String> listRoles() {
+        return Arrays.asList("ROLE_ADMIN","ROLE_USER","ROLE_MODERATOR");
+    }
 }
