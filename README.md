@@ -60,3 +60,11 @@
     - Modificamos el form.html
 12. Desacoplando los mensajes
     - Creamos messages.properties
+13. Lista de Países(Objetos)
+    - Creamos una nueva clase Pais
+    - Enlazamos Pais - Usuario: Cambiamos String por Pais en la clase Usuario
+    - @Valid evalúa la clase por separado
+    - @NotNull: Evalúa si se creo o no el objeto
+    - En el controlador agregamos un método
+    - Modificamos el form.html
+    - 

@@ -1,5 +1,6 @@
 package com.gianpc.app.controllers;
 
+import com.gianpc.app.models.domain.Pais;
 import com.gianpc.app.models.domain.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -49,5 +50,17 @@ public class FormController {
         paises.put("CL", "Chile");
         paises.put("CO", "Colombia");
         return paises;
+    }
+    @ModelAttribute("objectPaises")
+    public List<Pais> objectPaises() {
+        return Arrays.asList(
+                new Pais("PE", "Perú"),
+                new Pais("AR", "Argentina"),
+                new Pais("BO", "Bolivia"),
+                new Pais("BR", "Brasil"),
+                new Pais("CL", "Chile"),
+                new Pais("CO", "Colombia"),
+                new Pais("EC", "Ecuador")
+        );
     }
 }

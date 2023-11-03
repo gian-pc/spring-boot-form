@@ -1,5 +1,6 @@
 package com.gianpc.app.models.domain;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -15,8 +16,8 @@ public class Usuario {
     @NotBlank
     @Email
     private String email;
-    @NotEmpty
-    private String pais;
+    @Valid
+    private Pais pais;
 
     public String getUsername() {
         return username;
@@ -50,11 +51,11 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getPais() {
+    public Pais getPais() {
         return pais;
     }
 
-    public void setPais(String pais) {
+    public void setPais(Pais pais) {
         this.pais = pais;
     }
 }
